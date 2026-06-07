@@ -1,0 +1,26 @@
+name: Deploy to Azure Blob Storage
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Upload to Azure Blob Storage
+        run: |
+          az storage blob upload-batch \
+            --account-name ablearningstorage01 \
+            --source . \
+            --destination '$web' \
+            --pattern "*.html" \
+            --overwrite true
