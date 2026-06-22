@@ -15,13 +15,14 @@
              border-radius: 20px; font-size: 0.85rem; display: inline-block;
              margin: 8px 4px; }
     .date { color: #f59e0b; margin-top: 20px; font-size: 0.9rem; }
+    .done { color: #28c76f; margin-top: 10px; }
   </style>
 </head>
 <body>
   <div class="card">
     <h1>☁️ Cloud Learning Journey</h1>
-    <p>This page is hosted on <strong>Azure Blob Storage</strong> —
-       no VM, no server, just static files served from Microsoft's global network.</p>
+    <p>Hosted on <strong>Azure Blob Storage</strong> — auto-deployed via
+       <strong>GitHub Actions</strong> on every git push.</p>
     <br>
     <span class="badge">Azure</span>
     <span class="badge">AWS</span>
@@ -31,7 +32,8 @@
     <span class="badge">SAP DR</span>
     <br>
     <p class="date">📅 Started: June 2026 — Phase 01 of 08</p>
-    <p style="color:#28c76f; margin-top:10px;">✅ Session 4 — CI/CD Pipeline Live 🚀</p>
+    <p class="done">✅ Sessions 1–4 Complete — CI/CD Pipeline Live</p>
+    <p class="done">🔐 Session 5 — Key Vault + RBAC</p>
   </div>
 </body>
 </html>
